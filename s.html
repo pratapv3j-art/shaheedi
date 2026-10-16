@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शाहिद भगत सिंह इण्टर कॉलेज, हरिश नगर हरीगांव, बस्ती (उ.प्र.) | SBS Inter College</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts for RMLAU Typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rozha+One&display=swap">
+    <style>
+        :root {
+            --rmlau-maroon: #800000;
+            --rmlau-dark-maroon: #5a0000;
+            --rmlau-gold: #ffc107;
+            --rmlau-navy: #0a2540;
+            --rmlau-light-bg: #f8f9fa;
+            --rmlau-text: #212529;
+            --rmlau-border: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--rmlau-light-bg);
+            color: var(--rmlau-text);
+            line-height: 1.5;
+        }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background-color: var(--rmlau-navy);
+            color: white;
+            padding: 6px 5%;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--rmlau-gold);
+        }
+
+        .top-bar .contact-info span {
+            margin-right: 15px;
+        }
+
+        .top-bar .contact-info i {
+            color: var(--rmlau-gold);
+            margin-right: 5px;
+        }
+
+        .top-bar .quick-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 12px;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 3px 8px;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .top-bar .quick-links a:hover {
+            background: var(--rmlau-gold);
+            color: var(--rmlau-navy);
+        }
+
+        /* Main Header Section like RMLAU */
+        .main-header {
+            background: #ffffff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--rmlau-maroon);
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .college-logo {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 2px solid var(--rmlau-maroon);
+            padding: 2px;
+            object-fit: cover;
+            background: #fff;
+        }
+
+        .college-title h1 {
+            font-family: 'Rozha One', 'Poppins', serif;
+            color: var(--rmlau-maroon);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .college-title h2 {
+            font-size: 18px;
+            color: var(--rmlau-navy);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .college-title p {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .badge-box {
+            text-align: center;
+            background: #fff8f8;
+            border: 1px solid #ffd2d2;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .badge-box span {
+            display: block;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .badge-box strong {
+            font-size: 13px;
+            color: var(--rmlau-maroon);
+        }
+
+        /* Ticker Bar */
+        .news-ticker-container {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--rmlau-border);
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .ticker-title {
+            background: var(--rmlau-maroon);
+            color: white;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ticker-title::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 10px solid var(--rmlau-maroon);
+        }
+
+        marquee {
+            font-size: 13px;
+            color: var(--rmlau-navy);
+            font-weight: 500;
+        }
+
+        marquee a {
+            color: var(--rmlau-maroon);
+            text-decoration: none;
+            margin-right: 30px;
+        }
+
+        marquee a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Menu Bar */
+        .nav-menu {
+            background: var(--rmlau-maroon);
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu ul li {
+            position: relative;
+        }
+
+        .nav-menu ul li a {
+            display: block;
+            color: white;
+            padding: 14px 18px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-menu ul li a:hover, .nav-menu ul li a.active {
+            background: var(--rmlau-dark-maroon);
+            border-bottom: 3px solid var(--rmlau-gold);
+            color: var(--rmlau-gold);
+        }
+
+        .nav-menu ul li i {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        /* Main Layout Grid (Banner + Notice Board) */
+        .hero-section {
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-slider {
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--rmlau-border);
+            position: relative;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: white;
+            padding: 20px;
+        }
+
+        .slider-caption h3 {
+            font-size: 18px;
+            color: var(--rmlau-gold);
+        }
+
+        .slider-caption p {
+            font-size: 13px;
+        }
+
+        /* Notice Board Widget (RMLAU Style Tab) */
+        .notice-board {
+            background: white;
+            border-radius: 6px;
+            border: 1px solid var(--rmlau-border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+        }
+
+        .notice-header {
+            background: var(--rmlau-navy);
+            color: white;
+            padding: 12px 15px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom: 2px solid var(--rmlau-gold);
+        }
+
+        .notice-list {
+            padding: 10px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .notice-item {
+            padding: 10px;
+            border-bottom: 1px dashed var(--rmlau-border);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-date {
+            background: var(--rmlau-maroon);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .notice-date .day {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .notice-date .month {
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .notice-text a {
+            color: var(--rmlau-text);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .notice-text a:hover {
+            color: var(--rmlau-maroon);
+        }
+
+        .notice-badge {
+            background: #e74c3c;
+            color: white;
+            font-size: 9px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        /* Quick Portals / ERP Action Grid */
+        .quick-services {
+            padding: 10px 5% 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+            color: var(--rmlau-maroon);
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--rmlau-gold);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--rmlau-border);
+            border-radius: 6px;
+            padding: 20px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--rmlau-navy);
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--rmlau-maroon);
+            box-shadow: 0 6px 15px rgba(128,0,0,0.15);
+            background: var(--rmlau-maroon);
+            color: white;
+        }
+
+        .service-card i {
+            font-size: 28px;
+            color: var(--rmlau-maroon);
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover i {
+            color: var(--rmlau-gold);
+        }
+
+        .service-card span {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Administration Messages Section */
+        .admin-section {
+            background: #fff;
+            padding: 30px 5%;
+            border-top: 1px solid var(--rmlau-border);
+            border-bottom: 1px solid var(--rmlau-border);
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .admin-card {
+            background: var(--rmlau-light-bg);
+            border: 1px solid var(--rmlau-border);
+            border-left: 4px solid var(--rmlau-maroon);
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .admin-img {
+            width: 110px;
+            height: 120px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid var(--rmlau-maroon);
+        }
+
+        .admin-info h3 {
+            font-size: 16px;
+            color: var(--rmlau-maroon);
+            margin-bottom: 2px;
+        }
+
+        .admin-info h4 {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .admin-info p {
+            font-size: 12px;
+            color: #444;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Campus Facilities Gallery */
+        .gallery-section {
+            padding: 30px 5%;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 180px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 37, 64, 0.85);
+            color: white;
+            padding: 8px 12px;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Footer RMLAU Style */
+        footer {
+            background: var(--rmlau-navy);
+            color: white;
+            padding: 40px 5% 0;
+            border-top: 4px solid var(--rmlau-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-col h3 {
+            color: var(--rmlau-gold);
+            font-size: 16px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: white;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--rmlau-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            background: #051627;
+            padding: 15px 5%;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            margin: 0 -5.3%;
+        }
+
+        .footer-bottom a {
+            color: var(--rmlau-gold);
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .header-logo-container {
+                flex-direction: column;
+            }
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu ul {
+                justify-content: center;
+            }
+            .nav-menu ul li a {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <span><i class="fa-solid fa-phone"></i> +91 9450XXXXXX</span>
+            <span><i class="fa-solid fa-envelope"></i> sbsintercollegebasti@gmail.com</span>
+            <span><i class="fa-solid fa-location-dot"></i> हरीगांव, बस्ती (उ.प्र.) - 272130</span>
+        </div>
+        <div class="quick-links">
+            <a href="#erp"><i class="fa-solid fa-user-lock"></i> Student Portal</a>
+            <a href="#admin"><i class="fa-solid fa-lock"></i> Admin Login</a>
+            <a href="#contact"><i class="fa-solid fa-headset"></i> Helpline</a>
+        </div>
+    </div>
+
+    <!-- Main College Branding Header (RMLAU Layout) -->
+    <header class="main-header">
+        <div class="header-logo-container">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/17715997773668596579_0" alt="College Crest" class="college-logo">
+            <div class="college-title">
+                <h1>शाहिद भगत सिंह इण्टर कॉलेज</h1>
+                <h2>Shahid Bhagat Singh Inter College</h2>
+                <p>हरिश नगर हरीगांव, जनपद - बस्ती, उत्तर प्रदेश - 272130</p>
+            </div>
+        </div>
+        <div class="header-badges">
+            <div class="badge-box">
+                <span>सम्बद्धता / Affiliation</span>
+                <strong>यू.पी. बोर्ड, प्रयागराज</strong>
+            </div>
+            <div class="badge-box">
+                <span>विद्यालय कोड / Code</span>
+                <strong>BST-1284</strong>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Flash Marquee Ticker -->
+    <div class="news-ticker-container">
+        <div class="ticker-title"><i class="fa-solid fa-bullhorn"></i> सूचना पट्ट / Updates</div>
+        <marquee onmouseover="this.stop();" onmouseout="this.start();">
+            <a href="#notice"><i class="fa-solid fa-star" style="color: gold;"></i> सत्र 2026-27 के लिए कक्षा 6 से 12वीं में प्रवेश प्रारंभ! आवेदन पत्र जमा करने की अंतिम तिथि निकट।</a>
+            <a href="#notice"><i class="fa-solid fa-star" style="color: gold;"></i> वार्षिक परीक्षा समय-सारणी एवं प्रवेश पत्र ऑनलाइन पोर्टल पर उपलब्ध हैं।</a>
+            <a href="#notice"><i class="fa-solid fa-star" style="color: gold;"></i> छात्रवृत्ति (Scholarship) फॉर्म सत्यापन की तिथि विस्तारित की गई।</a>
+        </marquee>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#" class="active"><i class="fa-solid fa-house"></i> मुख्य पृष्ठ (Home)</a></li>
+            <li><a href="#about"><i class="fa-solid fa-landmark"></i> परिचय (About)</a></li>
+            <li><a href="#admin"><i class="fa-solid fa-users"></i> प्रशासन (Administration)</a></li>
+            <li><a href="#academics"><i class="fa-solid fa-graduation-cap"></i> पाठ्यक्रम (Academics)</a></li>
+            <li><a href="#admission"><i class="fa-solid fa-user-plus"></i> प्रवेश (Admissions)</a></li>
+            <li><a href="#erp"><i class="fa-solid fa-file-invoice"></i> परीक्षा एवं परिणाम</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-images"></i> गैलरी (Gallery)</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-address-book"></i> संपर्क (Contact)</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section Grid (Slider & Notice Board) -->
+    <section class="hero-section">
+        <!-- Hero Image Banner Slider -->
+        <div class="hero-slider">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/503155967485062907_0" alt="College Campus" class="slider-image">
+            <div class="slider-caption">
+                <h3>गुणवत्तापूर्ण शिक्षा एवं सर्वांगीण विकास</h3>
+                <p>शाहिद भगत सिंह इण्टर कॉलेज, हरिश नगर हरीगांव (बस्ती) - ग्रामीण भारत में शिक्षा का सशक्त केंद्र।</p>
+            </div>
+        </div>
+
+        <!-- RMLAU Style Notice Board Column -->
+        <div class="notice-board" id="notice">
+            <div class="notice-header">
+                <span><i class="fa-solid fa-bell"></i> नोटिस एवं परिपत्र</span>
+                <a href="#" style="color: var(--rmlau-gold); font-size: 12px; text-decoration: none;">सभी देखें</a>
+            </div>
+            <div class="notice-list">
+                <div class="notice-item">
+                    <div class="notice-date">
+                        <div class="day">18</div>
+                        <div class="month">अक्टूबर</div>
+                    </div>
+                    <div class="notice-text">
+                        <a href="#">अर्द्धवार्षिक परीक्षा 2026 की समय-सारणी डाउनलोड करें <span class="notice-badge">New</span></a>
+                    </div>
+                </div>
+                <div class="notice-item">
+                    <div class="notice-date">
+                        <div class="day">15</div>
+                        <div class="month">अक्टूबर</div>
+                    </div>
+                    <div class="notice-text">
+                        <a href="#">कक्षा 9 एवं 11 के छात्रों के लिए यूपी बोर्ड पंजीकरण सूचना।</a>
+                    </div>
+                </div>
+                <div class="notice-item">
+                    <div class="notice-date">
+                        <div class="day">10</div>
+                        <div class="month">अक्टूबर</div>
+                    </div>
+                    <div class="notice-text">
+                        <a href="#">विद्यालय वार्षिक खेलकूद प्रतियोगिता एवं सांस्कृतिक कार्यक्रम की तिथियां।</a>
+                    </div>
+                </div>
+                <div class="notice-item">
+                    <div class="notice-date">
+                        <div class="day">02</div>
+                        <div class="month">अक्टूबर</div>
+                    </div>
+                    <div class="notice-text">
+                        <a href="#">गांधी जयंती एवं लाल बहादुर शास्त्री जयंती समारोह कार्यवृत्त।</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student ERP & Quick Portals (RMLAU Style Action Services) -->
+    <section class="quick-services" id="erp">
+        <div class="section-title">
+            <h2>ऑनलाइन छात्र सेवाएं (ERP Portal Services)</h2>
+        </div>
+        <div class="service-grid">
+            <a href="#" class="service-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>शुल्क भुगतान (Online Fee)</span>
+            </a>
+            <a href="#" class="service-card">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>प्रवेश पत्र (Admit Card)</span>
+            </a>
+            <a href="#" class="service-card">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <span>परीक्षा परिणाम (Results)</span>
+            </a>
+            <a href="#" class="service-card">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>समय-सारणी (Timetable)</span>
+            </a>
+            <a href="#" class="service-card">
+                <i class="fa-solid fa-id-card"></i>
+                <span>छात्र सत्यापन (Verification)</span>
+            </a>
+            <a href="#" class="service-card">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>स्थानांतरण प्रमाण (TC Portal)</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Administration & Leadership Section -->
+    <section class="admin-section" id="admin">
+        <div class="section-title">
+            <h2>प्रशासनिक संदेश (Administration)</h2>
+        </div>
+        <div class="admin-grid">
+            <div class="admin-card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/12522086043023928433_0" alt="Principal" class="admin-img">
+                <div class="admin-info">
+                    <h3>प्रधानाचार्य संदेश</h3>
+                    <h4>शाहिद भगत सिंह इण्टर कॉलेज, बस्ती</h4>
+                    <p>"शिक्षा केवल किताबी ज्ञान तक सीमित नहीं है, अपितु यह विद्यार्थी के चरित्र निर्माण और राष्ट्र सेवा का आधार है। हम हर छात्र को आधुनिक शिक्षा और नैतिक संस्कार देने के लिए प्रतिबद्ध हैं।"</p>
+                </div>
+            </div>
+            <div class="admin-card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/12522086043023928433_1" alt="Manager" class="admin-img">
+                <div class="admin-info">
+                    <h3>प्रबंधक संदेश</h3>
+                    <h4>प्रबंध समिति, हरीगांव बस्ती</h4>
+                    <p>"हरिश नगर हरीगांव में स्थित हमारा संस्थान ग्रामीण क्षेत्र के बच्चों को उत्कृष्ट प्रयोगशाला, कंप्यूटर शिक्षा और सर्वसुलभ वातावरण प्रदान करने हेतु निरंतर कार्यरत है।"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Life & Facility Image Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-title">
+            <h2>संस्थान एवं परिसर (Campus & Facilities)</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/13293249148054545617_0" alt="Science Lab">
+                <div class="gallery-overlay">विज्ञान प्रयोगशाला (Science Lab)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/13293249148054545617_1" alt="Computer Lab">
+                <div class="gallery-overlay">कंप्यूटर लैब (Computer Lab)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/503155967485062907_0" alt="Classrooms">
+                <div class="gallery-overlay">स्मार्ट क्लासरूम (Classrooms)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/13293249148054545617_2" alt="Library">
+                <div class="gallery-overlay">पुस्तकालय (Library)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area (RMLAU Style) -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>संस्थान का पता</h3>
+                <p><strong>शाहिद भगत सिंह इण्टर कॉलेज</strong></p>
+                <p>हरिश नगर हरीगांव, पो.- हरीगांव</p>
+                <p>जनपद- बस्ती, उत्तर प्रदेश - 272130</p>
+                <p><i class="fa-solid fa-phone"></i> +91 9970469624</p>
+                <p><i class="fa-solid fa-envelope"></i> info@sbsintercollege.ac.in</p>
+            </div>
+            <div class="footer-col">
+                <h3>त्वरित लिंक्स (Quick Links)</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> प्रवेश प्रक्रिया</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> परीक्षा परिणाम</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> शुल्क संरचना</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> पाठ्येतर गतिविधियाँ</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> शिकायत निवारण</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>महत्वपूर्ण बोर्ड लिंक्स</h3>
+                <ul>
+                    <li><a href="https://upmsp.edu.in/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> यूपी माध्यमिक शिक्षा परिषद (UPMSP)</a></li>
+                    <li><a href="http://rmlau.ac.in/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Dr. RMLAU Ayodhya</a></li>
+                    <li><a href="https://scholarship.up.gov.in/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> UP Scholarship Portal</a></li>
+                    <li><a href="https://diksha.gov.in/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> DIKSHA Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shaheed Bhagat Singh Inter College, Harish Nagar Harigaon, Basti (U.P.). All Rights Reserved. </p>
+        </div>
+    </footer>
+
+</body>
+</html>
